@@ -1,28 +1,25 @@
-#include<conio.h>
 #include<iostream>
 using namespace std;
 
-	class Operator 
+class Bilangan 
 	 {
-		friend ostream& operator<<(ostream&, Operator&);
-		friend istream& operator>>(istream&, Operator&);
-	
-		public:
-			long faktorial();
-			long faktorial(int);
 		private:
-			int n;
-		long hasil;
+			int x, y;
+		public:
+			Bilangan() {x=1; y=100;}
+			int Iteratif(int x, int y);
 	};
-	
-	long Operator::faktorial() {
-		long fak=1;
-		for (int i = 1; i<=n; i++)
-		fak = fak*i;
-		return fak;
+int Bilangan::Iteratif(int x, int y){
+	for(x; x<=y; x++) {
+		if (x%5==0 && x%7==0) {
+			cout << "Hasil : " << x << endl;
+		}
 	}
-	
-	long Operator::faktorial(int n){ 
-		if ((n==0) || (n==1)) return(1);
-		else return (n*faktorial(n-1));
-	}
+	return x;
+}	
+
+int main() {
+	Bilangan z;
+	z.Iteratif(1, 100);
+	return 0;
+}	

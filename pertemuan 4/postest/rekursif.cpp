@@ -1,34 +1,25 @@
-#include <iostream>
-#include <string>
- 
+#include<iostream>
 using namespace std;
- 
-class cetak{
-      public:
-             cetak();
-             int proses(int a);
-      private:
-              int a;
-      };
-       
-cetak::cetak(){}
- 
-int cetak::proses (int a){
-    if (a>100){
-    }else
-    {
-    if (a % 5==0 && a % 7==0)
-    {
-    cout << a << endl;}
-    else
-    {}proses(a+1);
-    }
-    }
-int main(){
- 
-   cetak flow;
-   flow.proses(1);
-    
-   system("pause");
-   return 0;
-}
+
+class Bilangan 
+	 {
+		private:
+			int x, y;
+		public:
+			Bilangan() {x=1; y=100;}
+			int rekursif(int x, int y);
+	};
+int Bilangan::rekursif(int x, int y){
+	if(x<=100) {
+		if (x%5==0 && x%7==0) {
+			cout << "Hasil : " << x << endl;
+		}
+		return rekursif(x+1, y);
+	}
+}	
+
+int main() {
+	Bilangan z;
+	z.rekursif(1, 100);
+	return 0;
+}	
